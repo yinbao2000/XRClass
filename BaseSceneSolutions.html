@@ -1,0 +1,28 @@
+<!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<!-- include A-Frame extras for animations-->
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<!-- simplifies events-->
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+
+
+<body>
+  <!-- all of our objects (lights, models, cameras need to be a a part of our scene)-->
+    <a-scene>
+      <!-- AFrame uses meters as its measurement-->
+      <!-- set our camera to be at eye level-->
+      <a-camera position="0 1.5 0" ><a-cursor></a-cursor></a-camera> 
+      <!-- add a box to our scene. move to left, move it up to be on floor, rotate it, and set the color-->
+      <a-box position="-2 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <!-- TASK 1: Add a blue box to the right-->
+      <a-box position="2 0.5 -3" rotation="0 45 0" color="blue"></a-box>
+      <!-- TASK 2: Add a point light above-->
+      <a-light position="0 3 -3" type="point"></a-light>
+      <!-- TASK 3: Add Walls to the scene-->
+      <a-box position = "0 5 0" scale="10 10 10" side="back" color ="gray"></a-box>
+      <!-- TASK 4: add gaze to a box in back-->
+      <a-box position="0 0.5 -4" rotation="0 0 0" color="#4CC3D9"
+      event-set__enter="_event: mouseenter; color: #FFFFFF"
+      event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box>
+    </a-scene>
+  </body>
